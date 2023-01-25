@@ -25,6 +25,10 @@ public class Customer {
 	private int customerId;
     @Column
 	private String customerName;
+    @Column(unique = true)
+    private String email;
+    @Column
+    private String password;
     @Column
 	private int age;
     @Column 

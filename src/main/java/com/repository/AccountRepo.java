@@ -7,4 +7,6 @@ import com.entity.Account;
 @Repository
 public interface AccountRepo extends JpaRepository<Account, Integer> {
 
+   	Account findByAccNo(long accNo);
+
 }

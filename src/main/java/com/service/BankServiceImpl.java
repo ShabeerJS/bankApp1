@@ -3,8 +3,11 @@ package com.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.entity.Account;
 import com.entity.BankAdmin;
 import com.entity.Customer;
+import com.exception.BankApplicationException;
+import com.repository.AccountRepo;
 import com.repository.BankAdminRepo;
 import com.repository.CustomerRepo;
 
@@ -15,6 +18,8 @@ public class BankServiceImpl implements BankAdminService {
 	private CustomerRepo customerRepo;
 	@Autowired
 	private BankAdminRepo bankAdminRepo;
+	@Autowired 
+	private AccountRepo accountRepo;
 	
 	
 	@Override
@@ -40,11 +45,11 @@ public class BankServiceImpl implements BankAdminService {
 
 	@Override
 	public BankAdmin getAdminById(int adminId) {
-	                         BankAdmin admin=       bankAdminRepo.findById(adminId).get();
+	                         BankAdmin admin= bankAdminRepo.findById(adminId).get();
 		return admin;
 	}
-	
 
+	
 	
 
 }
